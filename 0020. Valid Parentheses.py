@@ -32,3 +32,28 @@ class Solution:
             return True
         else:
             return False
+
+
+
+# # 7/5/2024
+# # Runtime: O(n)
+# # Sapce: O(n)
+
+# class Solution:
+#     def isValid(self, s: str) -> bool:
+#         combos = {')': '(', '}': '{', ']': '['}
+#         valid = []
+
+#         for parentheses in s:
+#             if parentheses not in combos:
+#                 valid.append(parentheses)
+#             else:
+#                 if len(valid) == 0:
+#                     return False
+#                 if valid[-1] != combos[parentheses]:
+#                     return False
+#                 valid.pop()
+        
+#         if len(valid) != 0:
+#             return False
+        return True
