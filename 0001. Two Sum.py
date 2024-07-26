@@ -25,3 +25,24 @@ class Solution:
             cur_tar = target - nums[i]
             if (cur_tar in nums_hash) and (nums_hash[cur_tar] != i):
                 return [i, nums_hash[cur_tar]]
+
+
+
+
+# # 7/25
+# # Hashmap
+# # Runtime: O(n)
+# # Space: O(n)
+
+# class Solution:
+#     def twoSum(self, nums: List[int], target: int) -> List[int]:
+
+#         diff = {}
+        
+#         for i, num in enumerate(nums):
+#             if num in diff:
+#                 return [diff[num], i]
+#             else:
+#                 diff[target - num] = i
+
+
