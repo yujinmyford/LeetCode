@@ -29,3 +29,37 @@ class Solution:
             to_return.append(val[1])
 
         return to_return
+
+
+
+# # 7/25:
+# # Heap & Hashmap
+# # Runtime: O(k logn)
+# # Space: O(n)
+# class Solution:
+#     def topKFrequent(self, nums: List[int], k: int) -> List[int]:
+        
+#         frequency = {}
+
+#         for num in nums:
+#             if num not in frequency:
+#                 frequency[num] = 1
+#             else:
+#                 frequency[num] += 1
+        
+#         min_heap = []
+
+#         for key in frequency:
+#             if len(min_heap) < k:
+#                 heapq.heappush(min_heap, (frequency[key], key))
+#             else:
+#                 heapq.heappush(min_heap, (frequency[key], key))
+#                 heapq.heappop(min_heap)
+        
+
+#         most_freq = []
+
+#         for pair in min_heap:
+#             most_freq.append(pair[1])
+        
+#         return most_freq
