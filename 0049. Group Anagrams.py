@@ -20,3 +20,33 @@ class Solution:
 
         # After iterating through strs we'll have the anagrams grouped into groups
         return grouped.values()
+
+
+
+# # 7/25
+# # Hashmap
+# # Runtime: O(n)
+# # Space: O(n)
+# class Solution:
+#     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+
+#         groups = {}
+        
+
+#         for string in strs:
+#             sort = sorted(string)
+#             sort = ''.join(sort)
+#             if sort in groups:
+#                 lst = groups[sort]
+#                 lst.append(string)
+#                 groups[sort] = lst
+#             else:
+#                 groups[sort] = [string]
+        
+
+#         anagrams = []
+
+#         for lst in groups.values():
+#             anagrams.append(lst)
+        
+#         return anagrams
