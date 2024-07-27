@@ -51,3 +51,23 @@ class Solution:
 #             or ord("a") <= ord(c) <= ord("z")
 #             or ord("0") <= ord(c) <= ord("9")
 #         )
+
+
+# # 7/26:
+# class Solution:
+#     def isPalindrome(self, s: str) -> bool:
+        
+#         stk = []
+
+
+#         for char in s:
+#             if char.isalnum():
+#                 stk.append(char.lower())
+
+#         for i in range(len(s) - 1):
+#             if s[i].isalnum():
+#                 if s[i].lower() != stk.pop():
+#                     return False
+        
+
+#         return True
