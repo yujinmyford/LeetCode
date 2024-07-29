@@ -47,3 +47,24 @@ class Solution:
 #             curr = temp
 #         return prev
 
+
+# # 7/25
+# # Runtime: O(n)
+# # Space: O(1)
+# class Solution:
+#     def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+
+#         if head is None:
+#             return None
+        
+#         cur = head
+#         prev = None
+
+#         while cur.next:
+#             nextNode = cur.next
+#             cur.next = prev
+#             prev = cur
+#             cur = nextNode
+        
+#         cur.next = prev
+#         return cur
