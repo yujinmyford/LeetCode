@@ -29,3 +29,28 @@ class Solution:
 
         return head
 
+
+# # 7/29
+# # Linked List, slow&fast pointer
+# # Runtime: O(n)
+# # Space: O(1)
+# class Solution:
+#     def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
+        
+#         slow = head
+#         fast = head
+
+#         for i in range(n):
+#             fast = fast.next
+        
+#         if not fast:
+#             return head.next
+        
+#         while fast.next:
+#             slow = slow.next
+#             fast = fast.next
+        
+#         slow.next = slow.next.next
+    
+
+#         return head
