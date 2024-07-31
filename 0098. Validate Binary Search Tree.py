@@ -5,21 +5,18 @@
 #         self.left = left
 #         self.right = right
 
-
-# Binary Search Tree
+# BST, recursion
 # Runtime: O(n)
 # Space: O(1)
+
 class Solution:
-
     def isValidBST(self, root: Optional[TreeNode]) -> bool:
-        return self._isValidBST(root, float(-inf), float(inf))
-
-    def _isValidBST(self, cur_node, lower_bound, upper_bound):
-        # check if empty, then return True if it is
-        if not cur_node:
+        return self.validate(root, float('-inf'), float('inf'))
+        
+    
+    def validate(self, root: TreeNode, lower: int, upper: int):
+        if not root:
             return True
-        # make sure we meed bounds for BST
-        if not (lower_bound < cur_node.val and cur_node.val < upper_bound):
+        if not (lower < root.val < upper):
             return False
-        # recursive, send to left and right
-        return self._isValidBST(cur_node.left, lower_bound, cur_node.val) and self._isValidBST(cur_node.right, cur_node.val, upper_bound)
+        return self.validate(root.left, lower, root.val) and self.validate(root.right, root.val, upper)
