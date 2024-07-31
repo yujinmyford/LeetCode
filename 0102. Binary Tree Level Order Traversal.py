@@ -4,6 +4,11 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
+
+# BST, BFS
+# Runtime: O(n)
+# Space: O(1)
+
 class Solution:
     def levelOrder(self, root: TreeNode) -> List[List[int]]:
         res = []
