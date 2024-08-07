@@ -4,14 +4,14 @@
 
 import heapq
 
-class MedianFinder
+class MedianFinder:
 
 
     def __init__(self):
         # Initialize left and right heap
         # Left is max heap representing left half of stream, right is min heap representing right half of stream
-        self.left = left
-        self.right = right
+        self.left = []
+        self.right = []
 
     def addNum(self, num: int) -> None:
         # If num we're trying to add is less than or equal to largest element in left, we add to left
