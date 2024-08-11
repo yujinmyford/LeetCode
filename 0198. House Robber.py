@@ -1,18 +1,31 @@
-# Dynamic Programming
+# DP
 # Runtime: O(n)
-# Space: O(n)
+# Space: O(1)
 
 class Solution:
     def rob(self, nums: List[int]) -> int:
-        # If there are only 1 or 2 elements in nums, we can just return the largest number
-        if len(nums) <= 2:
-            return max(nums)
+        rob1, rob2 = 0, 0
 
-        # Initialize nums[1]
-        nums[1] = max(nums[0], nums[1])
+        for n in nums:
+            temp = max(n + rob1, rob2)
+            rob1 = rob2
+            rob2 = temp
+        return rob2
 
-        # DP subproblem, nums[i] = max(nums[i-2] + nums[i], nums[i-1])
-        for i in range(2, len(nums)):
-            nums[i] = max(nums[i-2] + nums[i], nums[i-1])
 
-        return nums[-1]
+
+# class Solution:
+#     def rob(self, nums: List[int]) -> int:
+#         #edge case
+#         if len(nums) <= 2:
+#             return max(nums)
+        
+#         #dp
+#         L = len(nums)
+#         dp = [0 for i in range(L)]
+#         dp[0], dp[1] = nums[0], max(nums[0], nums[1])
+        
+#         for i in range(2, L):
+#             dp[i] = max(dp[i - 2] + nums[i], dp[i - 1])
+        
+#         return dp[-1]
