@@ -31,3 +31,51 @@ class Solution:
 
         dp[data] = first_call + second_call
         return dp[data]
+
+
+
+# # Dynamic Programming solution
+# # Runtime: O(n)
+# # Space: O(1)
+
+# class Solution:
+#     def numDecodings(self, s: str) -> int:
+#         dp = {len(s): 1}
+#         for i in range(len(s) - 1, -1, -1):
+#             if s[i] == "0":
+#                 dp[i] = 0
+#             else:
+#                 dp[i] = dp[i + 1]
+
+#             if i + 1 < len(s) and (
+#                 s[i] == "1" or s[i] == "2" and s[i + 1] in "0123456"
+#             ):
+#                 dp[i] += dp[i + 2]
+#         return dp[0]
+
+# # Memoization solution 
+# # Runtime: O(n)
+# # Space: O(n)
+
+# class Solution:
+#     def numDecodings(self, s: str) -> int:
+#         dp = {len(s): 1}
+
+#         def dfs(i):
+#             # Already cached
+#             if i in dp:
+#                 return dp[i]
+#             # Bad case, can't start with 0
+#             if s[i] == "0":
+#                 return 0
+
+
+#             res = dfs(i + 1)
+#             if i + 1 < len(s) and (
+#                 s[i] == "1" or s[i] == "2" and s[i + 1] in "0123456"
+#             ):
+#                 res += dfs(i + 2)
+#             dp[i] = res
+#             return res
+
+#         return dfs(0)
