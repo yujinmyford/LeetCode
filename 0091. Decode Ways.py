@@ -70,7 +70,9 @@ class Solution:
 #                 return 0
 
 
+#             # 1 digit
 #             res = dfs(i + 1)
+#             # If 2 digit possible, add on to res
 #             if i + 1 < len(s) and (
 #                 s[i] == "1" or s[i] == "2" and s[i + 1] in "0123456"
 #             ):
