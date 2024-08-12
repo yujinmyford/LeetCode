@@ -36,7 +36,7 @@ class Solution:
 
 # # Dynamic Programming solution
 # # Runtime: O(n)
-# # Space: O(1)
+# # Space: O(n)
 
 # class Solution:
 #     def numDecodings(self, s: str) -> int:
