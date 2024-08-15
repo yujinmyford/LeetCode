@@ -9,17 +9,26 @@ class Solution:
         top, bottom = 0, len(matrix)
 
         while left < right and top < bottom:
+            # get every i in top row
             for i in range(left, right):
                 res.append(matrix[top][i])
+            # move down one row after reaching right
             top += 1
+            # get every i in right column
             for i in range(top, bottom):
                 res.append(matrix[i][right - 1])
+            # move left one after reaching bottom
             right -= 1
+
             if not (left < right and top < bottom):
                 break
+            # get every i in bottom row
             for i in range(right - 1, left - 1, -1):
                 res.append(matrix[bottom - 1][i])
+            # move up one after reaching left
             bottom -= 1
+
+            # get every i in left column
             for i in range(bottom - 1, top - 1, -1):
                 res.append(matrix[i][left])
             left += 1
