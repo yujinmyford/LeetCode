@@ -7,7 +7,7 @@ class Interval(object):
 """
 
 # Intervals
-# Runtime: O(n)
+# Runtime: O(n log n)
 # Space: O(1)
 
 class Solution:
