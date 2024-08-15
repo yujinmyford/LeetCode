@@ -14,3 +14,18 @@ class Solution:
             max_jump = max(max_jump, i + nums[i])
         # Will return True if we can jump to the end, False if not
         return max_jump >= len(nums) - 1
+
+
+
+# DP, Greedy
+# Runtime: O(n)
+# Space: O(1)
+
+class Solution:
+    def canJump(self, nums: List[int]) -> bool:
+        goal = len(nums) - 1
+
+        for i in range(len(nums) - 2, -1, -1):
+            if i + nums[i] >= goal:
+                goal = i
+        return goal == 0
