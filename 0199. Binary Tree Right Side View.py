@@ -4,6 +4,9 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
+
+# BST, BFS
+
 class Solution:
     def rightSideView(self, root: TreeNode) -> List[int]:
         res = []
@@ -22,3 +25,4 @@ class Solution:
             if rightSide:
                 res.append(rightSide.val)
         return res
+a
