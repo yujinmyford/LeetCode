@@ -18,6 +18,7 @@ class Solution:
 
             for i in range(qLen):
                 node = q.popleft()
+                # Automatically stores right most node in rightSide
                 if node:
                     rightSide = node
                     q.append(node.left)
@@ -25,4 +26,3 @@ class Solution:
             if rightSide:
                 res.append(rightSide.val)
         return res
-a
