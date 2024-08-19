@@ -32,6 +32,7 @@ class Solution:
 
 
 # # Graph, BFS
+# # Could just change the queue to stack, and solution becomes iterative BFS
 # class SolutionBFS:
 #     def numIslands(self, grid: List[List[str]]) -> int:
 #         if not grid:
