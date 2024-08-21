@@ -1,3 +1,22 @@
+# 8/20
+
+class Solution:
+    def maxArea(self, height: List[int]) -> int:
+        left = 0
+        right = len(height) - 1
+        maxAr = 0
+        
+        while left <= right:
+            curArea = min(height[left], height[right]) * (right - left)
+            maxAr = max(maxAr, curArea)
+            if height[left] > height[right]:
+                right -= 1
+            else:
+                left += 1
+        
+        return maxAr
+
+
 # 2 Pointers
 # Runtime: O(n)
 # Space: O(1)
