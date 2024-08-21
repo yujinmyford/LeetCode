@@ -17,3 +17,23 @@ class Solution:
             longest = max(longest, right - left + 1)
 
         return longest
+
+
+class Solution:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+
+        cur = set()
+        left = 0
+        longest = 0
+        
+        for i in range(len(s)):
+            print(i)
+            while s[i] in cur:
+                cur.remove(s[left])
+                left += 1
+            
+            cur.add(s[i])
+            print(cur)
+            longest = max(longest, i - left + 1)
+        
+        return longest
