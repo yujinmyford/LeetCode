@@ -1,3 +1,6 @@
+# Runtime: O(1)
+# Space: O(1)
+
 class Solution:
     def passThePillow(self, n: int, time: int) -> int:
         i = time // (n - 1)
