@@ -1,38 +1,31 @@
-# Graph, UnionFind
+# Graph, DFS
 
 class Solution:
-  def countComponents(self, n: int, edges: List[List[int]]) -> int:
-    par = [i for i in range(n)]
-    rank = [1] * n
+    def countComponents(self, n: int, edges: List[List[int]]) -> int:
+        adj = {i:[] for i in range(n)}
 
+        for edge1, edge2 in edges:
+            adj[edge1].append(edge2)
+            adj[edge2].append(edge1)
+        
+        visited = set()
 
-    def find(n1):
-      res = n1
+        def dfs(ver):
+            if ver in visited:
+                return
+            
+            visited.add(ver)
+            for nei in adj[ver]:
+                dfs(nei)
+            
+        components = 0
 
-      while res != par[res]:
-        par[res] = par[par[res]]
-        res = par[res]
-      return res
-
-    def union(n1, n2):
-      p1, p2 = find(n1), find(n2)
-
-      if p1 == p2:
-        return 0
-
-      if rank[p2] > rank[p1]:
-        par[p1] = p2
-        rank[p2] += rank[p1]
-      else:
-        par[p2] = p1
-        rank[p1] += rank[p2]
-
-
-    res = n
-    for n1, n2 in edges:
-      res -= union(n1, n2)
-
-    return res
+        for i in range(n):
+            if i not in visited:
+                components += 1
+                dfs(i)
+        
+        return components
 
 
 
