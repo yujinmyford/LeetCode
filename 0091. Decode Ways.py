@@ -35,6 +35,7 @@ class Solution:
 
 
 # # Dynamic Programming solution
+# # Bottom-up
 # # Runtime: O(n)
 # # Space: O(n)
 
@@ -54,6 +55,7 @@ class Solution:
 #         return dp[0]
 
 # # Memoization solution 
+# # Top-Down
 # # Runtime: O(n)
 # # Space: O(n)
 
