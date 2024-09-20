@@ -1,4 +1,6 @@
 # DFS
+# Runtime: O(E ^ 2)
+# Space: O(E)
 
 class Solution:
     def findItinerary(self, tickets: List[List[str]]) -> List[str]:
