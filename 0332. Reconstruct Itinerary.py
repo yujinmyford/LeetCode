@@ -13,12 +13,12 @@ class Solution:
 
         def dfs(adj, result, src):
             if src in adj:
-                destinations = adj[src][:]
+                destinations = adj[src].copy()
                 while destinations:
                     dest = destinations[0]
                     adj[src].pop(0)
                     dfs(adj, res, dest)
-                    destinations = adj[src][:]
+                    destinations = adj[src].copy()
             res.append(src)
 
         dfs(adj, res, "JFK")
@@ -28,3 +28,4 @@ class Solution:
             return []
 
         return res
+
